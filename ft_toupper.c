@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarasek <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 12:27:48 by kmarasek          #+#    #+#             */
-/*   Updated: 2023/01/21 13:22:39 by kmarasek         ###   ########.fr       */
+/*   Created: 2023/02/02 12:05:37 by kmarasek          #+#    #+#             */
+/*   Updated: 2023/02/02 12:12:41 by kmarasek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include <stdio.h>
 #include "libft.h"
 
-int	ft_strlen(char *str)
+char	ft_toupper(char c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	if (c >= 'a' && c <= 'z')
+		return (c + ('A' - 'a'));
+	return (c);
 }
 /*
 int	main(void)
 {
-	printf("%d",ft_strlen("Krystof"));
+	printf("This is output of 'C': %c\n", ft_toupper('C'));
+	printf("This is output of 'c': %c\n", ft_toupper('c'));
+	printf("This is output of '+': %c\n", ft_toupper('+'));
 }
 */

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kmarasek <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 12:27:48 by kmarasek          #+#    #+#             */
-/*   Updated: 2023/01/21 13:22:39 by kmarasek         ###   ########.fr       */
+/*   Created: 2023/02/02 11:55:24 by kmarasek          #+#    #+#             */
+/*   Updated: 2023/02/02 12:02:09 by kmarasek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,17 @@
 #include <stdio.h>
 #include "libft.h"
 
-int	ft_strlen(char *str)
+char	ft_tolower(char c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	if (c >= 'A' && c <= 'Z')
+		return (c + ('a' - 'A'));
+	return (c);
 }
 /*
 int	main(void)
 {
-	printf("%d",ft_strlen("Krystof"));
+	printf("This is the output of 'C' %c:\n", ft_tolower('C'));
+	printf("This is the output of 'c' %c:\n", ft_tolower('c'));
+	printf("This is the output of '+' %c:\n", ft_tolower('+'));
 }
 */

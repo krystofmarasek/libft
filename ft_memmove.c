@@ -12,8 +12,10 @@
 
 #include <unistd.h>
 #include <stdio.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
+//dest = empty array | src = full array | n = number of char to be moved
 {
 	char		*d;
 	const char	*s;

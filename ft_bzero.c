@@ -12,10 +12,14 @@
 
 #include <unistd.h>
 #include <stdio.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
+//s = string | n = how many turn into null char
 {
-	unsigned char *p = s;
+	unsigned char	*p;
+
+	p = s;
 	while (n--)
 		*p++ = 0;
 }

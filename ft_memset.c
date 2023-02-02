@@ -12,13 +12,17 @@
 
 #include <unistd.h>
 #include <stdio.h>
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
+//*s = string | c = character replacement | n =  nb of char to replace
 {
-	unsigned char* p=s;
-	while(n--)
+	unsigned char	*p;
+
+	p = s;
+	while (n--)
 		*p++ = (unsigned char)c;
-	return s;
+	return (s);
 }
 /*
 int	main(void)

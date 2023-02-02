@@ -10,31 +10,25 @@
 #                                                                              #
 # **************************************************************************** #
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
-
-NAME = myprogram
-SOURCES = main.c helper.c
-OBJECTS = $(SOURCES:.c=.o)
-
-all: $(NAME)
-
-$(NAME): $(OBJECTS)
-      $(CC) $(CFLAGS) $(OBJECTS) -o $(NAME)
-
-%.o: %.c
-      $(CC) $(CFLAGS) -c $< -o $@
-
+SRC	= $(wildcard ft*.c)
+OBJ	= $(SRC:.c=.o)
+CC	= gcc
+RM 	= rm -f
+CFLAGS	= -Wall -Wextra -Werror -I.
+NAME	= libft.a
+all:	$(NAME)
+$(NAME):	$(OBJ)
+	ar rcs $(NAME) $(OBJ)
+	
 clean:
-      rm -f $(OBJECTS)
+	$(RM) $(OBJ)
+fclean:	clean
+	$(RM) $(NAME)
+re:	fclean $(NAME)
+bonus:	$(OBJ)
+	ar rcs $(NAME) $(OBJ)	
+so:
+	$(cc) -nostarfiles -fPIC $(CFLAGS) $(SRC)
+	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
-fclean: clean
-      rm -f $(NAME)
-
-re: fclean all
-
-bonus:
-      $(CC) $(CFLAGS) bonus.c -o bonus
-
-.PHONY: all clean fclean re bonus
 
